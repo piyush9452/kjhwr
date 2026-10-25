@@ -1,0 +1,296 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f4f2;
+  --surface: #fcfcfb;
+  --border: #e4e3df;
+  --text: #0b0b0b;
+  --text-2: #52514e;
+  --accent: #2a78d6;
+  --danger: #c0392b;
+  --radius: 10px;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  font-size: 15px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #121211;
+  --surface: #1a1a19;
+  --border: #33332f;
+  --text: #f0efec;
+  --text-2: #c3c2b7;
+  --accent: #3987e5;
+  --danger: #e66767;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+.muted {
+  color: var(--text-2);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  padding: 16px 0;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+nav {
+  display: flex;
+  gap: 4px;
+}
+
+nav a {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--text-2);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a.active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle,
+.segmented button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 6px 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  min-width: 0;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 20px;
+  margin-bottom: 16px;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.controls input[type='date'],
+.controls input[type='time'] {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+.slider input {
+  width: 220px;
+  accent-color: var(--accent);
+}
+
+.segmented {
+  display: inline-flex;
+}
+
+.segmented button {
+  border-radius: 0;
+}
+
+.segmented button:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.segmented button:last-child {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+.segmented button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.kpis-2 {
+  grid-template-columns: repeat(2, 1fr);
+  margin: 16px 0 0;
+}
+
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.metric-value {
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin: 4px 0 2px;
+}
+
+.metric-hint {
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.chart-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swatch {
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.swatch-band {
+  height: 10px;
+  opacity: 0.5;
+}
+
+.state {
+  display: grid;
+  place-items: center;
+  min-height: 120px;
+  color: var(--text-2);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.state-error {
+  color: var(--danger);
+}
+
+.tooltip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.tooltip-title {
+  font-weight: 600;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+  gap: 16px;
+}
+
+.insights {
+  margin-bottom: 16px;
+}
+
+.insights ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.split-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  gap: 2px;
+  margin-top: 16px;
+}

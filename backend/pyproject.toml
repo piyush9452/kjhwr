@@ -1,0 +1,10 @@
+[project]
+name = "wind-forecast-desk"
+version = "1.0.0"
+requires-python = ">=3.12"
+
+# Lint/format config lives in the repo-root ruff.toml.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]

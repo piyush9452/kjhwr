@@ -1,0 +1,11 @@
+line-length = 120
+target-version = "py312"
+extend-include = ["*.ipynb"]
+extend-exclude = ["frontend"]  # keep ruff defaults (.venv, node_modules, ...)
+
+[lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["B008"]  # FastAPI's Query()/Depends() defaults
+
+[lint.isort]
+known-first-party = ["app"]
