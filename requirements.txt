@@ -1,2 +1,9 @@
-# Installed by Vercel's Python runtime for api/index.py
--r backend/requirements.txt
+# Installed by Vercel's Python runtime for api/index.py.
+# Vercel can't parse `-r` includes, so this mirrors backend/requirements.txt (minus uvicorn,
+# which a serverless function doesn't need). Keep the versions in sync.
+fastapi==0.115.6
+pydantic==2.10.4
+pandas==2.2.3
+numpy==2.2.1
+httpx==0.28.1
+tenacity==9.0.0
