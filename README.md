@@ -2,7 +2,7 @@
 
 **Wind Forecast Desk** is a pilot web app for a GB utility's day-ahead power trading team. On D-1, traders decide how much power to buy on top of expected wind generation. The app shows the **latest national wind forecast that was available at the decision cutoff** (D-1 09:00 UK by default) next to what the wind actually produced, and measures how wrong that forecast tends to be: MAE, bias, tail errors, and how the error grows with lead time. It then turns the measured error into **P10/P50/P90 reliability bands** and a **"firm wind" (P10) figure**, so the desk can size extra procurement against the wind it can actually count on. The pilot covers decisions made in January 2026 and uses only Elexon BMRS data.
 
-**Live demo:** _<add Vercel URL after deploy>_
+**Live demo:** https://kjhwr-orpin.vercel.app
 
 ## Key findings (January 2026, D-1 09:00 forecast)
 
